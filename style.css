@@ -149,6 +149,7 @@ html {
 .user_info span {
     font-size: 20px;
     color: white;
+    font-weight: 500;
 }
 .user_info p {
     font-size: 10px;
@@ -300,7 +301,7 @@ html {
     cursor: pointer;
 }
 .myuser .myuser-right span i {
-    background: rgb(153, 150, 150);
+    background: rgb(237 225 225);
     width: 30px;
     border-radius: 50%;
     height: 30px;
@@ -308,7 +309,52 @@ html {
     align-items: center;
     justify-content: center;
 }
-
+.modal-group {
+    position: absolute;
+    padding: 0 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.modal-group .modal-group_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+.modal-group .modal_content {
+    border-radius: 15px;
+    background-color: rgb(240, 194, 224);
+    padding: 15px 10px;
+    height: 100%;
+}
+.modal-group .modal_content h3 {
+    padding: 10px 10px;
+}
+.modal-group .modal_content .user_add {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.relative {
+    position: relative;
+}
+.modal-group .contacts {
+    margin-top: 20px;
+    max-height: 400px;
+}
+.modal-group .contacts .user_info span {
+    color: black;
+}
+.modal-group .contacts .user_info p {
+    color: #464242;
+}
+.modal-group .contacts li {
+    margin-bottom: 5px !important;
+}
 /* L&R.html */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 

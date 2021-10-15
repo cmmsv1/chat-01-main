@@ -25,7 +25,7 @@
     <body>
         <div class="container-fluid h-100">
             <div class="row justify-content-center h-100" >
-                <div class="col-md-4 col-xl-3 chat list-chat active relative">
+                <div class="col-md-4 col-xl-3 chat list-chat relative">
                     
                     <div class="card mb-sm-3 mb-md-0 contacts_card">
                         <div class="myuser">
@@ -34,8 +34,8 @@
                                 <span>Chats</span>
                             </div>
                             <div class="myuser-right">
-                                <span><i class="fas fa-plus"></i></i></span>
-                                <span><i class="far fa-paper-plane"></i></span>
+                                <span onclick="showModalGroup()"><i class="fas fa-plus"></i></i></span>
+                                <span onclick="showModalSent()"><i class="far fa-paper-plane"></i></span>
                             </div>
                         </div>
                         <div class="card-header">
@@ -146,6 +146,9 @@
                     <div class="modal-group">
                         <div class="modal-bg"></div>
                         <div class="modal_content">
+                            <div class="modal-close" onclick="closeModalGroup()">
+                                <i class="fas fa-times"></i>
+                            </div>
                             <h3>Chọn bạn bè</h3>
                             <div class="card-header">
                                 <div class="input-group">
@@ -163,7 +166,7 @@
                                 </div>
                             </div>
                             <ul class="contacts">
-                                <li class="onchat-private">
+                                <li>
                                     <div class="d-flex bd-highlight">
                                         <div class="img_cont">
                                             <img
@@ -179,12 +182,16 @@
                                             <p>Cương left 7 mins ago</p>
                                         </div>
                                         <div class="user_add">
-                                            <button class="btn btn-primary">Chọn</button>
+                                            <button class="btn btn-primary select-user active">Chọn</button>
+                                            <div class="after-select">
+                                                <i class="fas fa-check"></i>
+                                                <i class="fas fa-times close-select"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     
                                 </li>
-                                <li class="onchat-private">
+                                <li>
                                     <div class="d-flex bd-highlight">
                                         <div class="img_cont">
                                             <img
@@ -200,7 +207,11 @@
                                             <p>Cương left 7 mins ago</p>
                                         </div>
                                         <div class="user_add">
-                                            <button class="btn btn-primary">Chọn</button>
+                                            <button class="btn btn-primary select-user active">Chọn</button>
+                                            <div class="after-select">
+                                                <i class="fas fa-check"></i>
+                                                <i class="fas fa-times close-select"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     
@@ -211,14 +222,104 @@
                                 <button class="btn btn-success">Tạo nhóm</button>
                             </div>
                         </div>
-                    
-                </div>
+                    </div>
+
+                                <!-- modal sent message all -->
+                
+                        <div class="modal-group modal-sent">
+                            <div class="modal-bg"></div>
+                            <div class="modal_content">
+                                <div class="modal-close" onclick="closeModalSent()">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <h3>Gửi tin nhắn đến</h3>
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text attach_btn"
+                                            ><i class="fas fa-paperclip"></i
+                                        ></span>
+                                    </div>
+                                    <textarea
+                                        name=""
+                                        class="form-control type_msg"
+                                        placeholder="Type your message..."
+                                    ></textarea>
+                                </div>
+                                <div class="card-header">
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            placeholder="Search..."
+                                            name=""
+                                            class="form-control search"
+                                        />
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text search_btn"
+                                                ><i class="fas fa-search"></i
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="contacts">
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img
+                                                    src="https://2.bp.blogspot.com/-8ytYF7cfPkQ/WkPe1-rtrcI/AAAAAAAAGqU/FGfTDVgkcIwmOTtjLka51vineFBExJuSACLcBGAs/s320/31.jpg"
+                                                    class="rounded-circle user_img"
+                                                />
+                                                <span
+                                                    class="online_icon offline"
+                                                ></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Cương</span>
+                                                <p>Cương left 7 mins ago</p>
+                                            </div>
+                                            <div class="user_add">
+                                                <button class="btn btn-success sent-user">Sent</button>
+                                                <div class="after-select after-sent">
+                                                    <i class="fas fa-check"></i>                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img
+                                                    src="https://2.bp.blogspot.com/-8ytYF7cfPkQ/WkPe1-rtrcI/AAAAAAAAGqU/FGfTDVgkcIwmOTtjLka51vineFBExJuSACLcBGAs/s320/31.jpg"
+                                                    class="rounded-circle user_img"
+                                                />
+                                                <span
+                                                    class="online_icon offline"
+                                                ></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Cương</span>
+                                                <p>Cương left 7 mins ago</p>
+                                            </div>
+                                            <div class="user_add">
+                                                <button class="btn btn-success sent-user">Sent</button>
+                                                <div class="after-select after-sent">
+                                                    <i class="fas fa-check"></i>                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+
+                            </div>
+                        
+                    </div>
                 </div>
                 <div class="col-md-4 col-xl-3 chat chat-private">
                     <div class="card">
                         <div class="card-header msg_head">
                             <div class="d-flex bd-highlight">
-                                <div class="icon-back">
+                                <div class="icon-back" onclick="backToMeunu()">
                                     <i class="fas fa-arrow-left"></i>
                                 </div>
                                 <div class="img_cont">
@@ -237,26 +338,6 @@
                                         <span><i class="fas fa-phone"></i></span>
                                     </div>
                                 </div>
-                            </div>
-                            <span id="action_menu_btn"
-                                ><i class="fas fa-ellipsis-v"></i
-                            ></span>
-                            <div class="action_menu">
-                                <ul>
-                                    <div class="icon-close"><i class="fas fa-times"></i></i></div>
-                                    <li>
-                                        <i class="fas fa-user-circle"></i> View
-                                        profile
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-users"></i> Add to
-                                        close friends
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-plus"></i> Add to group
-                                    </li>
-                                    <li><i class="fas fa-ban"></i> Block</li>
-                                </ul>
                             </div>
                         </div>
                         <div class="card-body msg_card_body">
@@ -355,8 +436,6 @@
                         </div>
                     </div>
                 </div>
-
-                
             </div>
         </div>
 

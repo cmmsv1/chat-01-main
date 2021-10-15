@@ -14,12 +14,13 @@ html {
 .card {
     height: 600px;
     border-radius: 15px !important;
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(89, 129, 239) !important;
 }
 .card-header .icon-back {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .card-header .icon-back i {
     font-size: 20px;
@@ -46,6 +47,11 @@ html {
 .card-header {
     border-radius: 15px 15px 0 0 !important;
     border-bottom: 0 !important;
+    background: none;
+}
+.card-header input {
+    background: rgb(66, 65, 65, 0.7) !important;
+    color: black;
 }
 .card-footer {
     border-radius: 0 0 15px 15px !important;
@@ -211,43 +217,7 @@ html {
 .msg_head {
     position: relative;
 }
-#action_menu_btn {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    color: white;
-    cursor: pointer;
-    font-size: 20px;
-}
-.action_menu {
-    z-index: 1;
-    position: absolute;
-    padding: 15px 0;
-    background-color: rgba(238, 227, 227, 0.8);
-    color: black;
-    border-radius: 15px;
-    top: 30px;
-    right: 15px;
-    display: none;
-}
-.action_menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 10px;
-}
-.action_menu ul li {
-    width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 5px;
-}
-.action_menu ul li i {
-    padding-right: 10px;
-}
-.action_menu ul li:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.2);
-}
+
 @media (max-width: 576px) {
     .contacts_card {
         margin-bottom: 15px !important;
@@ -255,24 +225,6 @@ html {
 }
 .chat-private {
     display: none;
-}
-.chat-private.active {
-    display: block;
-}
-.list-chat.active {
-    display: block;
-}
-.list-chat {
-    display: none;
-}
-.action_menu .icon-close {
-    position: absolute;
-    right: 15px;
-    top: 5px;
-    cursor: pointer;
-}
-.action_menu .icon-close i {
-    font-size: 20px;
 }
 .myuser {
     display: flex;
@@ -287,7 +239,7 @@ html {
 .myuser .myuser-left span {
     margin-left: 10px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
 }
 .myuser .myuser-right {
     display: flex;
@@ -317,6 +269,16 @@ html {
     right: 0;
     bottom: 0;
     display: none;
+    z-index: 10;
+}
+.modal-group .modal-close {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    cursor: pointer;
+}
+.modal-group .modal-close i {
+    font-size: 20px;
 }
 .modal-group .modal-group_submit {
     display: flex;
@@ -326,12 +288,14 @@ html {
 }
 .modal-group .modal_content {
     border-radius: 15px;
-    background-color: rgb(240, 194, 224);
+    background-color: rgba(89, 129, 239) !important;
     padding: 15px 10px;
     height: 100%;
 }
 .modal-group .modal_content h3 {
     padding: 10px 10px;
+    color: #fff;
+    font-weight: 500;
 }
 .modal-group .modal_content .user_add {
     margin-left: auto;
@@ -344,16 +308,37 @@ html {
 }
 .modal-group .contacts {
     margin-top: 20px;
-    max-height: 400px;
+    max-height: 380px;
+    overflow-y: scroll;
 }
-.modal-group .contacts .user_info span {
-    color: black;
+.modal-group .contacts li {
+    cursor: default;
 }
-.modal-group .contacts .user_info p {
-    color: #464242;
+.modal-group .contacts::-webkit-scrollbar {
+    width: 0px;
+}
+.modal-group .contacts .after-select {
+    display: none;
+}
+.modal-group .contacts .after-select.active {
+    display: block;
+}
+.modal-group .contacts .after-select i {
+    font-size: 23px;
+    cursor: pointer;
+}
+.modal-group .contacts .after-select .fa-check {
+    color: #4cd137;
+    margin-right: 20px;
+}
+.modal-group .contacts .after-select .fa-times {
+    color: #c23616;
 }
 .modal-group .contacts li {
     margin-bottom: 5px !important;
+}
+.modal-group .card-header {
+    padding: 0.75rem 0.25rem;
 }
 /* L&R.html */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
